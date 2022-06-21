@@ -19,6 +19,13 @@ a {
     text-decoration: none;
 }
 
+li a:hover, 
+.add-playlist:hover, 
+.add-playlist:hover span, 
+.download:hover .install {
+    color: var(--white-color);
+}
+
 ul {
     list-style: none;
 }
@@ -71,7 +78,7 @@ main {
     height: 100%;
     background-color: #000;
     padding: 0 1rem;
-    min-height: 320px;
+    min-height: 400px;
 }
 
 #top-sidebar {
@@ -91,7 +98,7 @@ main {
 }
 
 #logo-small {
-    height: 20px;
+    height: 30px;
     display: none;
 }
 
@@ -104,6 +111,10 @@ main {
 #nav-top {
     height: 110px;
     border: 1px solid black;
+}
+
+#nav-top .home {
+    border-left: 2px solid greenyellow;
 }
 
 .sidebar .sidebar-nav .links li {
@@ -148,7 +159,6 @@ main {
 
 #btm-sidebar {
     height: 50px;
-    /* background-color: #000; */
 }
 
 #btm-sidebar .profile {
@@ -211,7 +221,18 @@ main {
 }
 
 #main-nav .nav-list li {
-    margin: 0.5rem 1rem;
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+
+#main-nav .nav-list .border-green {
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: greenyellow;
+    margin-top: 5px;
 }
 
 /* RECENTLY PLAYED / FOR YOU / POPULAR ARTISTS */
@@ -219,13 +240,11 @@ main {
 .cards {
     margin-top: 2rem;
     flex-wrap: wrap;
-    overflow-x: scroll;
 }
 
 .cards .card {
     margin-right: 10px;
     width: calc(100% / 6 - 10px);
-
 }
 
 .cards .card .card-img {
@@ -333,6 +352,10 @@ main {
     align-items: center;
 }
 
+.site-footer .column-center .play-btns .play-btn {
+    cursor: pointer;
+}
+
 .site-footer .column-center li, 
 .site-footer .column-right i {
     padding: 0 8px; 
@@ -372,6 +395,26 @@ main {
 
 .site-footer .column-center .time-bar .second-bar {
     width: 40%;
+    position: relative;
+}
+
+.site-footer .column-center .time-bar .second-bar .circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #C1C1C1;
+    position: absolute;
+    left: calc(100% - 15px);
+    bottom: -5px;
+    display: none;
+}
+
+.site-footer .column-center .time-bar .first-bar:hover .second-bar {
+    background-color: greenyellow;
+}
+
+.site-footer .column-center .time-bar .first-bar:hover .circle {
+    display: block;
 }
 
 .site-footer .column-center .time-bar .second-bar, 
@@ -437,6 +480,7 @@ main {
         text-align: center;
         padding-top: 0;
         margin-bottom: 0;
+        height: 40px;
     }
 
     #logo {
@@ -459,9 +503,30 @@ main {
         display: none;
     }
 
+    #btm-sidebar a {
+        display: block;
+        text-align: center;
+    }
+
+    #btm-sidebar a img {
+        margin-right: 0;
+    }
+
     #btm-sidebar .subtitle, 
     #btm-sidebar .title,
     #btm-sidebar hr {
         display: none;
     }
+}
+
+@media screen and (max-height: 500px) {
+    
+    #call-to-action {
+        display: none;
+    }
+
+    #main-nav {
+        margin-top: 20px;
+    }
+
 }
