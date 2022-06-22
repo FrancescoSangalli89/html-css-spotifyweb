@@ -148,7 +148,7 @@ main {
 
 #nav-btm .playlists {
     height: calc(100% - 70px);
-    overflow: scroll;
+    overflow: auto;
 }
 
 #nav-btm .playlists .playlist {
@@ -431,12 +431,16 @@ main {
     padding: 5px;
 }
 
+.site-footer .column-right .volume-container {
+    align-items: center;
+}
+
 .site-footer .column-right .first-bar {
     width: 110px;
 }
 
 .site-footer .column-right .second-bar {
-    width: 50px;
+    width: 50%;
 }
 
 /* media query */
@@ -457,6 +461,24 @@ main {
 
     .cards .card {
         width: calc(100% / 2 - 10px);
+    }
+
+    .site-footer .column-right {
+        display: block;
+    }
+
+    .site-footer .column-right .list-icon-container, 
+    .site-footer .column-right .volume-container {
+        height: 50%;
+    }
+
+    .site-footer .column-right .list-icon-container {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .site-footer .column-right .first-bar {
+        width: 60px;
     }
 }
 
@@ -517,6 +539,7 @@ main {
     #btm-sidebar hr {
         display: none;
     }
+
 }
 
 @media screen and (max-height: 500px) {
